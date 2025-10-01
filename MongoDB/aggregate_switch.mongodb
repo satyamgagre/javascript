@@ -1,0 +1,73 @@
+// carAggregation.js
+
+const { MongoClient } = require("mongodb");
+
+async function run() {
+  const uri = "mongodb://127.0.0.1:27017";  // your MongoDB connection string
+  const client = new MongoClient(uri);
+
+  try {
+    await client.connect();
+    const db = client.db("car_dealership");   // your database name
+    const cars = db.collection("cars");       // your collection
+
+    const result = await cars.aggregate([
+      {
+        $project: {
+          _id: 0,
+          maker: 1,
+          model: 1,
+          priceCategory: {
+            $switch: {
+              branches: [
+                {
+                  case: { $lt: ["$price", 500000] },
+                  then: "Budget"
+                },
+                {
+                  case: {
+                    $and: [
+                      { $gte: ["$price", 500000] },
+                      { $lt: ["$price", 1000000] }
+                    ]
+                  },
+                  then: "Midrange"
+                },
+                {
+                  case: {
+                    $and: [
+                      { $gte: ["$price", 1000000] },
+                      { $lte: ["$price", 10000000] }
+                    ]
+                  },
+                  then: "Luxury"
+                },
+                {
+                  case: { $gt: ["$price", 10000000] },
+                  then: "Premium"
+                }
+              ],
+              default: "Unknown"
+            }
+          }
+        }
+      },
+      {
+        $group: {
+          _id: "$priceCategory",
+          totalCars: { $sum: 1 },
+          makers: { $addToSet: "$maker" },
+          models: { $push: "$model" }
+        }
+      },
+      { $sort: { totalCars: -1 } }
+    ]).toArray();
+
+    console.log(JSON.stringify(result, null, 2));
+
+  } finally {
+    await client.close();
+  }
+}
+
+run().catch(console.dir);

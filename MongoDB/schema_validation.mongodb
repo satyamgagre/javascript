@@ -1,0 +1,15 @@
+db.createCollection("users2",{
+    validator: {
+        $jsonSchema:{
+            bsonType: "object",
+            required: ["name", "phone","age"],
+            properties: {
+                name: {
+                    bsonType: "string",
+                    description: "name should be string."
+                }
+            }
+        }
+    }
+}
+)
