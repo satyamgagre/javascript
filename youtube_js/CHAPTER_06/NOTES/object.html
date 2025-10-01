@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OBJECT</title>
+</head>
+<body>
+  <h1>Object in JavaScript</h1>
+
+  <script>
+    // Define an object
+    let product = {
+      company: "Mango",
+      item_name: "Cotton striped t-shirt.",
+      price: 816,
+    };
+
+    // Check type of object
+    console.log(typeof product);   // "object"
+
+    // Print entire object
+    console.log(product);
+
+    // Access properties
+    console.log(product.company);       // Using dot notation
+    console.log(product["company"]);    // Using bracket notation
+    console.log(product.item_name);
+    console.log(product.price);
+
+    // Update properties
+    product.company = "Banana";
+    console.log(product.company); 
+    console.log(product);
+
+    product.price = 999;
+    console.log(product.price);
+    console.log(product);
+
+    // Print all values at once (better than using commas inside [])
+    console.log(Object.values(product));
+
+    // Delete a property
+    delete product.company;
+    console.log(product);
+
+    // Loop through keys and values
+    for (let key in product) {
+      console.log(key + ":", product[key]);
+    }
+  </script>
+</body>
+</html>
