@@ -6,6 +6,7 @@
   <title>FUNCTIONS</title>
 </head>
 <body>
+  <h1>function</h1>
   <script>
 //    let age = 21;
 //    console.log(`Your age is ${age}`)
@@ -14,16 +15,49 @@
 //    age = 25;
 //    console.log(`Your age is ${age}`)
 
-let age = 23;
-function printAge(){
-  console.log(`Your age is ${age}`);
-}
-printAge();
+//let age = 23;
+//function printAge(){
+//  console.log(`Your age is ${age}`);
+//}
+//printAge();
 
-age = 53;
-printAge();
-age = 25;
-printAge();
-  </script>
+//age = 53;
+//printAge();
+//age = 25;
+//printAge();
+
+function generateRandomMove() {
+  let random = Math.random();
+  let randomMove = random * 3;
+  return randomMove;
+}
+
+console.log(generateRandomMove());
+
+
+function determineDriveStatus(){
+  let age = 19;
+  let status;
+  if (age > 18){
+    status = 'You can Drive.';
+  } else{
+    status = 'Use a BiCycle';
+  }
+  return status;
+}
+console.log(determineDriveStatus());
+
+function sum(a,b){
+  let sum = a + b;
+  return sum;
+}
+console.log(sum(4,5));
+
+function greeting(name = 'Pyaare'){ //'Pyaare' is default value
+  console.log(`Namaste ${name}!`);
+}
+greeting('Satyam');
+greeting();
+</script>
 </body>
 </html>
