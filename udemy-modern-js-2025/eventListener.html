@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+</head>
+<body>
+    <button id="myButton">Click Me!</button>
+    <script>
+        const button = document.getElementById("myButton");
+
+        const funnyMessages = [
+        "Ouch! Why are you poking me? 😵",
+        "Do you even click, bro? 😂",
+        "That tickles! 🐭",
+        "404: Joke not found 🤖",
+        "Stop it, I’m shy 🙈",
+        "I swear the cake is a lie 🎂",
+        "You clicked me harder than my ex ignored me 💔",
+        "Calm down… I’m just a button 😅"
+        ];
+
+        button.addEventListener("click", function() {
+            const randomMsg = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
+            alert(randomMsg);
+        });
+    </script>
+</body>
+</html>

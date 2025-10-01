@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRICKET GAME</title>
+  <style>
+    body{
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    button{
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>BAT BALL STUMP GAME</h1>
+
+  <button onclick="playGame('Bat')">Bat</button>
+  <button onclick="playGame('Ball')">Ball</button>
+  <button onclick="playGame('Stump')">Stump</button>
+
+  <h2 id="result"></h2>
+
+  <script>
+    function playGame(userChoice) {
+      console.log(`You have chosen ${userChoice}`);
+
+      // Generate a random computer choice each time
+      let randomNumber = Math.floor(Math.random() * 3); // 0,1,2
+      let computerChoice;
+
+      if (randomNumber === 0) {
+        computerChoice = 'Bat';
+      } else if (randomNumber === 1) {
+        computerChoice = 'Ball';
+      } else {
+        computerChoice = 'Stump';
+      }
+
+      console.log(`Computer choice is ${computerChoice}`);
+
+      // Decide Winner
+      let result = "";
+      if (userChoice === computerChoice) {
+        result = "It's a Tie!";
+      } else if (
+        (userChoice === "Bat" && computerChoice === "Ball") ||
+        (userChoice === "Ball" && computerChoice === "Stump") ||
+        (userChoice === "Stump" && computerChoice === "Bat")
+      ) {
+        result = "🎉🍾 You Win!";
+      } else {
+        result = "💻 Computer Wins!";
+      }
+
+      // Show result on page
+      document.getElementById("result").innerText =
+        `You: ${userChoice} | Computer: ${computerChoice} → ${result}`;
+    }
+  </script>
+</body>
+</html>

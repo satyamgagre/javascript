@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent" style="padding: 20px; border:2px solid black;">Parent
+        <div id="child" style="margin-top: 20px; padding: 20px; background-color: lightcoral;">
+            Child </div>
+    </div>
+    <script>
+        const parentDiv = document.getElementById("parent");
+        const childDiv = document.getElementById("child");
+
+        parentDiv.addEventListener("click", function(){
+            alert("Parent Div Clicked(Capturing)!");
+        }, true);
+
+        childDiv.addEventListener("click", function(){
+            alert("Child Div Clicked!");
+        });
+    </script>
+</body>
+</html>

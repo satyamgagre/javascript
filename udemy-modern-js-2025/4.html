@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Style Example</title>
+</head>
+<body>
+    <p id="style">Watch my style change!</p>
+    <button onclick="changeStyle()">Change Style</button>
+
+    <script>
+        function changeStyle() {
+            let element = document.getElementById("style");
+            element.style.color = "white";
+            element.style.fontSize = "24px";
+            element.style.backgroundColor = "pink";
+            element.style.padding = "10px";  // optional: adds spacing
+            element.style.borderRadius = "8px"; // optional: rounded edges
+        }
+    </script>
+</body>
+</html>

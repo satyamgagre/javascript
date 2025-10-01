@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXERCISE_03</title>
+</head>
+<body>
+<p id="name_display"></p>
+
+  <script>
+    const myName = 'Satyam';
+    document.querySelector('#name_display').
+    innerText = myName;
+    console.log(myName);
+    const gstPercentage = 18;
+    let cart_value = Math.round((
+      (15999 - (10/100 * 15999))  // first item with 10% off
+      - 272                       // discount
+      + (2499 - (41/100 * 2499))  // second item with 41% off
+      - 29                        // discount
+      + 25 + 20  )                 // extra charges
+      *( 100 + gstPercentage) /100);
+
+    console.log(cart_value);
+  </script>
+</body>
+</html>

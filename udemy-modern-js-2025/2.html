@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifying the DOM</title>
+</head>
+<body>
+    <h2>DOM Manipulation Example</h2>
+
+    <!-- Target element -->
+    <p id="demo">Click the buttons to modify me!</p>
+
+    <!-- Buttons -->
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="changeAttribute()">Change Attribute</button>
+    <button onclick="changeStyle()">Change Style</button>
+
+    <script>
+        // 1. Change Content
+        function changeText() {
+            document.getElementById("demo").textContent = "Hello, Satya!";
+        }
+
+        // 2. Change Attribute (turn text into a link)
+        function changeAttribute() {
+            document.getElementById("demo").innerHTML = 
+                '<a href="https://google.com" target="_blank">Go to Google</a>';
+        }
+
+        // 3. Change Style (color, font size, background)
+        function changeStyle() {
+            let element = document.getElementById("demo");
+            element.textContent = "Styled Text!";
+            element.style.color = "white";
+            element.style.backgroundColor = "teal";
+            element.style.fontSize = "24px";
+            element.style.padding = "10px";
+            element.style.borderRadius = "8px";
+        }
+    </script>
+</body>
+</html>

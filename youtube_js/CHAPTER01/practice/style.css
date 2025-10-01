@@ -1,0 +1,35 @@
+.ClassButton{
+  color: orangered;
+}
+
+#bagbutton{
+  background-color:palegreen;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+
+#wishlistbutton{
+  background-color: gainsboro;
+  padding: 5px 15px;
+  border-radius: 2px;
+  border: 2px dotted black;
+}
+
+#wishlistbutton1{
+  background-color: lightcyan;
+  padding: 5px 15px;
+  border-radius: 2px;
+  border: 2px dashed black;
+}
+
+#wishlistbutton2{
+  background-color: lightcyan;
+  padding: 5px 15px;
+  border-radius: 2px;
+  border: 2px solid black;
+}

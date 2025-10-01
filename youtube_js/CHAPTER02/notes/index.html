@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables</title>
+</head>
+<body>
+  <script>
+    let welcomemessage = "Hello Javascript!";
+
+    console.log('Hello JavaScript!');
+    console.log(welcomemessage);
+
+    // calculate bag value
+    let bagprice = (15999 - (10/100 * 15999)) - 272;
+    let jeansprice = (2499 - (41/100*2499)) - 29
+    let bagvalue = Math.round(
+      (bagprice + jeansprice + 25 + 20) * 118/100
+    );
+
+    // final message
+    let bagsummary = `Your final Myntra bag amount value is : ₹${bagvalue}`;
+    console.log(bagsummary);
+  </script>
+</body>
+</html>
