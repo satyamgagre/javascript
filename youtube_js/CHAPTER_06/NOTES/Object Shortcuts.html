@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object Shortcuts</title>
+</head>
+<body>
+  <script>
+    // Object
+    let product = {
+      company: 'Mango',
+      itemName: 'Cotton striped t-shirt',
+      price: 999
+    };
+
+    // Normal way
+    let companyName = product.company;
+    console.log("Normal way:", companyName);
+
+    // Destructuring way (shortcut)
+    let { company, itemName, price } = product;
+    console.log("Destructuring:", company, itemName, price);
+
+    // You can also rename while destructuring
+    let { company: brand } = product;
+    console.log("Renamed:", brand);
+
+    // Or set default values if property not present
+    let { discount = 10 } = product;
+    console.log("Default value:", discount);
+  </script>
+
+  
+</body>
+</html>
